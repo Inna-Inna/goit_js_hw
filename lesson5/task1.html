@@ -15,12 +15,14 @@
 
         for (var key in tasksCompleted){
             var maxTasks = 0;
+            var nameEmployee = '';
             if (tasksCompleted[key] >= maxTasks){
                 maxTasks = tasksCompleted[key];
+                nameEmployee = key;
             }
         }
 
-        alert(maxTasks);
+        alert(nameEmployee + ' completed the maximum of '+ maxTasks + ' tasks!');
 
     </script>
 </body>

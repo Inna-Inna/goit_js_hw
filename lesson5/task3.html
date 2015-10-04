@@ -8,9 +8,11 @@
     <script>
         var arr = [];
         var total = 0;
-        do {var newNum = prompt("Please enter a number!");
+        while (true){
+            var newNum = prompt("Please enter a number!");
+            if (isNaN(newNum) || newNum === null || newNum === '') break;
             arr.push(+newNum);
-        } while (!isNaN(newNum) && newNum != null);
+        }
 
         for (var i = 0; i < arr.length; i++){
             total += arr[i];

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function isPal(string){
+        var palLeft = string.toLowerCase().split(' ').join('');
+        var palRight = palLeft.split('').reverse().join('');
+        return palLeft == palRight;
+    }
+
+    alert(isPal('Anna')); // true
+    alert(isPal('А роза упала на лапу Азора')); //true
+    alert(isPal('Вася')); //false
+    alert(isPal('12321')); //true
+    alert(isPal('123212')); //false
+</script>
+</body>
+</html>

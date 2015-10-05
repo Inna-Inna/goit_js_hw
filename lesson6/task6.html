@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function unique(arr){
+        var uniq = [];
+        for (var a = 0; a< arr.length; a++){
+            for (var b = 0; b < uniq.length; b++){
+                var result = (arr[a] == uniq[b])? continue : uniq.push(arr[a]);
+            }
+        }
+        return uniq;
+    }
+</script>
+</body>
+</html>

@@ -9,12 +9,15 @@
     function unique(arr){
         var uniq = [];
         for (var a = 0; a< arr.length; a++){
-            for (var b = 0; b < uniq.length; b++){
-                var result = (arr[a] == uniq[b])? continue : uniq.push(arr[a]);
+            if (uniq.indexOf(arr[a]) === -1){
+                uniq.push(arr[a]);
             }
         }
         return uniq;
     }
+    var strings = ['кришна', 'кришна', 'харе', 'харе', 'харе', 'харе', 'кришна', 'кришна', '8-()' ];
+
+    alert(unique(strings));
 </script>
 </body>
 </html>

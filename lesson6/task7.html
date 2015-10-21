@@ -9,10 +9,16 @@
     var array = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
 
     function anClean(arr){
+        var newArr =[];
+        var sortedArr = [];
         for (var a = 0; a< arr.length; a++){
-            var newArr = arr[a].sort();
-            console.log(newArr);
+            var sortWord = arr[a].toLowerCase().split('').sort().join('');
+            if (newArr.indexOf(sortWord) === -1) {
+                newArr.push(sortWord);
+                sortedArr.push(arr[a]);
+            }
         }
+        return sortedArr;
     }
     console.log(anClean(array));
 </script>

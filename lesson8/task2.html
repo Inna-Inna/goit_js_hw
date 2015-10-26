@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Calculator(){
+
+        this.calculate = function(str){
+
+            var parsedStr = str.split(' ');
+            var a = +parsedStr[0];
+            var operator = parsedStr[1];
+            var b = +parsedStr[2];
+
+            if (isNaN(a) || isNaN(b)){
+                alert("Please enter data in a valid format!");
+            }
+
+            return operation[operator](a, b);
+        };
+
+        var operation = {
+            '+': function(x, y){return x + y;},
+            '-': function(x, y){return x - y;}
+        };
+
+        this.addMethod = function(name, func){
+            operation[name] = func;
+        };
+    }
+    var calc = new Calculator();
+    alert(calc.calculate("3 + 7"));
+
+    calc.addMethod("*", function(a, b) {
+        return a * b;
+    });
+    calc.addMethod("/", function(a, b) {
+        return a / b;
+    });
+    calc.addMethod("**", function(a, b) {
+        return Math.pow(a, b);
+    });
+
+    var result = calc.calculate("2 ** 3");
+    alert( result ); // 8
+</script>
+</body>
+</html>
